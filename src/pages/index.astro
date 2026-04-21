@@ -26,10 +26,12 @@ const description = site.bio || 'Simple website for an emerging artist';
         {site.logo_url && <img src={site.logo_url} alt={`${site.artist_name} logo`} loading="eager" style="width:84px;height:84px;border-radius:999px;object-fit:cover;border:1px solid var(--line);" />}
         <h1 style="font-size:clamp(2rem,6vw,3rem);line-height:1.06;margin:0;">{site.artist_name || 'Artist Name'}</h1>
       </header>
+
       <section class="card" style="padding:1rem;margin-top:1rem;">
         <h2 style="margin:.1rem 0 .4rem;">Bio</h2>
         <p style="margin:0;white-space:pre-wrap;">{site.bio || 'Artist bio coming soon.'}</p>
       </section>
+
       <section style="margin-top:1rem;">
         <h2 style="margin:.1rem 0 .5rem;">Works for sale</h2>
         {works.length > 0 ? (
@@ -49,6 +51,7 @@ const description = site.bio || 'Simple website for an emerging artist';
           <p class="small">No works listed yet.</p>
         )}
       </section>
+
       <section class="card" style="padding:1rem;margin-top:1rem;">
         <h2 style="margin:.1rem 0 .6rem;">Social links</h2>
         {socials.length > 0 ? (

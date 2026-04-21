@@ -1,25 +1,14 @@
 {
-  "generated_at": "2026-04-21T09:12:04.100Z",
+  "generated_at": "",
   "site": {
-    "slug": "jessegray",
-    "artist_name": "Jesse Gray",
-    "logo_url": "https://www.jessegray.co.nz/img/JesseGray.svg",
-    "bio": "This is my bio",
+    "slug": "demo-artist",
+    "artist_name": "Demo Artist",
+    "logo_url": "",
+    "bio": "Welcome to my Easel artist site.",
     "social_links": [
-      {
-        "url": "https://instagram.com/jesse_gray",
-        "label": "Instagram"
-      }
+      { "label": "Instagram", "url": "https://instagram.com" }
     ],
     "status": "published"
   },
-  "works": [
-    {
-      "image_url": "https://www.jessegray.co.nz/img/JesseGray.svg",
-      "title": "Work 1",
-      "description": "This is the description",
-      "purchase_url": "https://www.google.com",
-      "sort_order": 0
-    }
-  ]
+  "works": []
 }
