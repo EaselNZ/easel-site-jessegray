@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-04-21T08:40:33.766Z",
+  "site": {
+    "slug": "jessegray",
+    "artist_name": "Jesse Gray",
+    "logo_url": "https://www.jessegray.co.nz/img/JesseGray.svg",
+    "bio": "This is my bio",
+    "social_links": [
+      {
+        "url": "https://instagram.com/jesse_gray",
+        "label": "Instagram"
+      }
+    ],
+    "status": "published"
+  },
+  "works": [
+    {
+      "image_url": "https://www.jessegray.co.nz/img/JesseGray.svg",
+      "title": "Work 1",
+      "description": "This is the description",
+      "purchase_url": "https://www.google.com",
+      "sort_order": 0
+    }
+  ]
+}
