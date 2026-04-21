@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import content from '../../site-data/content.json';
+
+const site = content.site || {};
+const works = Array.isArray(content.works) ? content.works : [];
+const socials = Array.isArray(site.social_links) ? site.social_links : [];
+
+const pageTitle = site.artist_name ? `${site.artist_name} | Easel` : 'Easel Artist Site';
+const description = site.bio || 'Simple website for an emerging artist';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <main class="container" style="padding-top:1rem;padding-bottom:2.25rem;">
+      <header class="card" style="padding:1rem;display:grid;gap:.8rem;">
+        {site.logo_url && <img src={site.logo_url} alt={`${site.artist_name} logo`} loading="eager" style="width:84px;height:84px;border-radius:999px;object-fit:cover;border:1px solid var(--line);" />}
+        <h1 style="font-size:clamp(2rem,6vw,3rem);line-height:1.06;margin:0;">{site.artist_name || 'Artist Name'}</h1>
+      </header>
+      <section class="card" style="padding:1rem;margin-top:1rem;">
+        <h2 style="margin:.1rem 0 .4rem;">Bio</h2>
+        <p style="margin:0;white-space:pre-wrap;">{site.bio || 'Artist bio coming soon.'}</p>
+      </section>
+      <section style="margin-top:1rem;">
+        <h2 style="margin:.1rem 0 .5rem;">Works for sale</h2>
+        {works.length > 0 ? (
+          <div class="grid works">
+            {works.map((work) => (
+              <article class="card" style="overflow:hidden;display:grid;grid-template-rows:auto 1fr;">
+                <img src={work.image_url} alt={work.title} loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
+                <div style="padding:.85rem;display:grid;gap:.5rem;">
+                  <h3 style="margin:0;font-size:1.05rem;">{work.title}</h3>
+                  <p class="small" style="margin:0;">{work.description}</p>
+                  <a class="btn" href={work.purchase_url} target="_blank" rel="noopener noreferrer">View / buy</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="small">No works listed yet.</p>
+        )}
+      </section>
+      <section class="card" style="padding:1rem;margin-top:1rem;">
+        <h2 style="margin:.1rem 0 .6rem;">Social links</h2>
+        {socials.length > 0 ? (
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+            {socials.map((social) => (
+              <a class="btn" href={social.url} target="_blank" rel="noopener noreferrer">{social.label}</a>
+            ))}
+          </div>
+        ) : (
+          <p class="small" style="margin:0;">No social links yet.</p>
+        )}
+      </section>
+    </main>
+  </body>
+</html>
